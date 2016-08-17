@@ -84,18 +84,29 @@
                 </xpath>
             </field>
         </record>
-
-        <!-- <record id="tagm_journal_entries_custom_view_form" model="ir.ui.view">
+        <record id="tagm_journal_entries_custom_view_form" model="ir.ui.view">
             <field name="name">tagm_journal_entries_custom_view_form</field>
-            <field name="model">account.move.line</field>
+            <field name="model">account.move</field>
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='date_maturity']" position="after">
+                <xpath expr="//field[@name='line_id']/tree/field[@name='name']" position="after">
                     <field name="custom_bank"/>
                 </xpath>
             </field>
-        </record> -->
-
+        </record>
+        <record id="tagm_company_form_view" model="ir.ui.view">
+            <field name="name">tagm_company_form_view</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="ntn"/>
+                    <field name="strn"/>
+                    <field name="pntn"/>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>
