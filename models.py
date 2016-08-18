@@ -35,6 +35,8 @@ class tagm_firm_partner(models.Model):
 	_inherit = 'account.move'
 	firm_partner = fields.Many2one('res.partner',"Firm Partner" , domain="[('cc_firm_partner','=',True)]")
 	custom_bank = fields.Many2one('res.partner.bank',"Bank")
+	custom_cheque_date = fields.Date('Cheque Date')
+	custom_cheque_no = fields.Char('Cheque No.')
 #account invoice class inherited
 class tagm_invoice_firm_partner(models.Model):
 	_inherit = 'account.invoice'

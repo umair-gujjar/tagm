@@ -57,6 +57,8 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='period_id']" position="after">
                     <field name="firm_partner"/>
+                    <field name="custom_cheque_date"/>
+                    <field name="custom_cheque_no"/>
                 </xpath>
             </field>
         </record>
