@@ -23,7 +23,8 @@ class tagm_customer_payment(models.Model):
 	def bank_field_transfer(self):
 		if self.custom_bank:
 			account_move_recs = self.env['account.move'].search([('name','=',self.number)])
-			account_move_recs.line_id.custom_bank = self.custom_bank
+			for rec in account_move_recs.line_id:
+				rec.custom_bank = self.custom_bank
 
 #res partner class inherited
 class tagm_partner(models.Model):
