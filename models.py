@@ -58,7 +58,7 @@ class tagm_invoice_firm_partner(models.Model):
 class tagm_account_move_line(models.Model):
 	_inherit = 'account.move.line'
 	custom_bank = fields.Many2one('res.partner.bank',"Bank")
-	analytic_account_id = fields.Many2one('account.analytic.account',"Analytic Account test", domain="[('custom_account_head','=','account.move.account_id'),('custom_firm_partner','=','account.move.firm_partner')]")
+	analytic_account_id = fields.Many2one('account.analytic.account',"Analytic Account test", domain="[('custom_account_head','=',account_id),('custom_firm_partner','=',parent.firm_partner)]")
 	#analytic_account_id = fields.Many2one('account.analytic.account',"Analytic Account test", domain="[('custom_firm_partner','=','account.move.firm_partner')]")
 
 #res company class inherited
